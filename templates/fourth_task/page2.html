@@ -1,0 +1,22 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}
+Корзина
+{% endblock %}
+
+{% block content %}
+<h1>Корзина</h1>
+{% if data.selected_tours_list %}
+    <p>Здесь вы можете просмотреть выбранные путевки и их общую стоимость.</p>
+    <ul>
+        {% for tour in data.selected_tours_list %}
+        <li>
+            {{ tour.name }} - {{ tour.price }}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Общая стоимость: {{ data.total_price }}$</p>
+{% else %}
+    <p>Ваша корзина пуста.</p>
+{% endif %}
+{% endblock %}

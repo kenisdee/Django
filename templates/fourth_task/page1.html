@@ -1,0 +1,18 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}
+Каталог путевок
+{% endblock %}
+
+{% block content %}
+<h1>Каталог туристических путевок</h1>
+<p>Откройте для себя лучшие предложения на туристические путевки. Здесь вы найдете путевки на любой вкус и бюджет.</p>
+<ul>
+    {% for tour in tours_list %}
+    <li>
+        {{ tour.name }} - {{ tour.price }}
+        <button>Купить</button>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
