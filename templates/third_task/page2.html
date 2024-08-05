@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+</head>
+<body>
+    <h1>Корзина</h1>
+    {% if selected_tours %}
+        <p>Здесь вы можете просмотреть выбранные путевки и их общую стоимость.</p>
+        <ul>
+            {% for tour in selected_tours %}
+            <li>
+                {{ tour.name }} - {{ tour.price }}
+            </li>
+            {% endfor %}
+        </ul>
+        <p>Общая стоимость: {{ total_price }}$</p>
+    {% else %}
+        <p>Ваша корзина пуста.</p>
+    {% endif %}
+    <a href="{% url 'home' %}">
+        <button>На главную</button>
+    </a>
+</body>
+</html>

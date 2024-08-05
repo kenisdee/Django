@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог путевок</title>
+</head>
+<body>
+    <h1>Каталог туристических путевок</h1>
+    <p>Откройте для себя лучшие предложения на туристические путевки. Здесь вы найдете путевки на любой вкус и бюджет.</p>
+    <ul>
+        {% for tour in tours %}
+        <li>
+            {{ tour.name }} - {{ tour.price }}
+            <button>Купить</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">
+        <button>На главную</button>
+    </a>
+</body>
+</html>
